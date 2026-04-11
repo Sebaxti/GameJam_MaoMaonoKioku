@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using System.Collections;
 using System.Collections.Generic;
 
 public class SCR_MinijuegoPrecision : MonoBehaviour
@@ -8,144 +9,157 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private VideoPlayer video;
     [SerializeField] private Slider barraPrincipal;
-    [SerializeField] private RectTransform zonaObjetivo; // El cuadradito verde
-    [SerializeField] private GameObject indicadorVisual; // La barrita que se mueve
+    [SerializeField] private RectTransform zonaObjetivo;
 
-    [Header("Configuración de Tramos (Segundos)")]
-    [Tooltip("Puntos donde el video se detendrá para el minijuego")]
+    [Header("Configuración de Checkpoints (Segundos)")]
+    [Tooltip("El video volverá a estos segundos exactos si fallas después de haberlos superado.")]
     [SerializeField] private List<float> paradasVideo;
 
     [Header("Ajustes")]
     [SerializeField] private string idNivel = "Nivel3";
-    [SerializeField] private float velocidadBarra = 0.5f;
+    [SerializeField] private float velocidadBarra = 0.6f;
 
-    private int indiceActual = 0;
-    private bool juegoActivo = false;
-    private bool tramoSuperado = false;
-    private float tiempoInicioTramo = 0f;
+    private float checkpointActual = 0f;
+    private bool juegoTerminado = false;
+    private bool enEsperaDeSeguridad = false;
 
     void Start()
     {
-        video.Pause();
-        ConfigurarNuevoTramo();
+        // 1. Reset absoluto de la interfaz al arrancar
+        if (barraPrincipal != null)
+        {
+            barraPrincipal.minValue = 0f;
+            barraPrincipal.maxValue = 1f;
+            barraPrincipal.value = 0f;
+        }
+
+        if (video != null)
+        {
+            video.loopPointReached += AlFinalizarVideoTotal;
+            video.playOnAwake = false;
+            video.Pause();
+            video.time = 0;
+        }
+
+        GenerarNuevaZonaVerde();
     }
 
     void Update()
     {
-        if (indiceActual >= paradasVideo.Count) return;
+        if (juegoTerminado || enEsperaDeSeguridad) return;
 
-        // MANTENER PRESIONADO
+        // MIENTRAS MANTIENES PULSADO: El video avanza y la barra se llena
         if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
         {
-            if (!tramoSuperado)
-            {
-                AvanzarMinijuego();
-            }
+            ActualizarProgreso();
+        }
+        else
+        {
+            // Si dejas de pulsar, el video se pausa inmediatamente
+            if (video.isPlaying) video.Pause();
         }
 
-        // SOLTAR
+        // AL SOLTAR: Evaluamos si la barra estaba en la zona verde
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
-            ValidarIntento();
-        }
-
-        // Si el tramo ya fue superado, el video corre hasta la siguiente parada
-        if (tramoSuperado)
-        {
-            if (video.time >= paradasVideo[indiceActual])
+            // Solo validamos si la barra se ha movido un poco (evita fallos por clics accidentales)
+            if (barraPrincipal.value > 0.05f)
             {
-                LlegadaAParada();
+                ValidarIntento();
             }
         }
     }
 
-    void ConfigurarNuevoTramo()
+    void ActualizarProgreso()
     {
-        tramoSuperado = false;
-        video.Pause();
-
-        // Resetear la barra al inicio
-        barraPrincipal.value = 0;
-
-        // Mover la zona verde a un lugar aleatorio de la barra (0.2 a 0.8 para que no esté en los bordes)
-        float posicionAzar = Random.Range(0.2f, 0.8f);
-        zonaObjetivo.anchorMin = new Vector2(posicionAzar - 0.05f, 0);
-        zonaObjetivo.anchorMax = new Vector2(posicionAzar + 0.05f, 1);
-
-        juegoActivo = true;
-    }
-
-    void AvanzarMinijuego()
-    {
-        // 1. El video avanza mientras presionas
         if (!video.isPlaying) video.Play();
 
-        // 2. La barra se llena
         barraPrincipal.value += velocidadBarra * Time.deltaTime;
 
-        // 3. Si llega al final y no soltaste, es FALLO automático
+        // Si la barra llega al 100% y no has soltado, fallas por tardanza
         if (barraPrincipal.value >= 1f)
         {
-            Fallar();
+            StartCoroutine(ProcesoFallo());
         }
     }
 
     void ValidarIntento()
     {
-        if (!juegoActivo) return;
+        // Calculamos los bordes visuales de la zona verde
+        float inicioVerde = zonaObjetivo.anchorMin.x;
+        float finVerde = zonaObjetivo.anchorMax.x;
 
-        // Calculamos la posición de la barra vs la zona verde
-        float centroVerde = zonaObjetivo.anchorMin.x + 0.05f;
-        float margen = 0.06f; // El ancho de tu zona de acierto
-
-        if (Mathf.Abs(barraPrincipal.value - centroVerde) < margen)
+        if (barraPrincipal.value >= inicioVerde && barraPrincipal.value <= finVerde)
         {
             Aceptar();
         }
         else
         {
-            Fallar();
+            StartCoroutine(ProcesoFallo());
         }
     }
 
     void Aceptar()
     {
-        Debug.Log("¡Acierto! El video continúa.");
-        tramoSuperado = true;
-        juegoActivo = false;
-        video.Play();
+        // Guardamos el progreso: buscamos en la lista qué parada hemos superado ya
+        ActualizarCheckpointDeSeguridad();
+
+        // Limpiamos la barra y ponemos un nuevo reto para seguir avanzando el video
+        barraPrincipal.value = 0f;
+        GenerarNuevaZonaVerde();
+
+        Debug.Log("¡Acierto! Checkpoint de seguridad: " + checkpointActual);
     }
 
-    void Fallar()
+    void ActualizarCheckpointDeSeguridad()
     {
-        Debug.Log("Fallo. Reiniciando tramo.");
-        video.Pause();
-        video.time = tiempoInicioTramo; // Vuelve al inicio del intervalo actual
-        barraPrincipal.value = 0;
-        ConfigurarNuevoTramo();
-    }
+        float tiempoActual = (float)video.time;
+        float mejorPunto = 0f;
 
-    void LlegadaAParada()
-    {
-        video.Pause();
-        tiempoInicioTramo = (float)video.time;
-        indiceActual++;
-
-        if (indiceActual < paradasVideo.Count)
+        // Buscamos el tiempo más alto en la lista que sea menor al tiempo actual del video
+        foreach (float p in paradasVideo)
         {
-            ConfigurarNuevoTramo();
+            if (p <= tiempoActual) mejorPunto = p;
+            else break;
         }
-        else
-        {
-            FinalizarNivel();
-        }
+        checkpointActual = mejorPunto;
     }
 
-    void FinalizarNivel()
+    IEnumerator ProcesoFallo()
     {
+        enEsperaDeSeguridad = true;
+        video.Pause();
+
+        // PENALIZACIÓN: El video vuelve al último checkpoint que lograste pasar
+        video.time = checkpointActual;
+
+        // RESET DE BARRA: Forzamos que vuelva a 0
+        barraPrincipal.value = 0f;
+
+        // Pequeña espera para que el jugador suelte el dedo y se prepare
+        yield return new WaitForSeconds(0.3f);
+
+        enEsperaDeSeguridad = false;
+        GenerarNuevaZonaVerde();
+    }
+
+    void GenerarNuevaZonaVerde()
+    {
+        float anchoZona = 0.15f;
+        float posicionAzar = Random.Range(0.1f, 0.8f);
+        zonaObjetivo.anchorMin = new Vector2(posicionAzar, 0);
+        zonaObjetivo.anchorMax = new Vector2(posicionAzar + anchoZona, 1);
+    }
+
+    private void AlFinalizarVideoTotal(VideoPlayer vp)
+    {
+        if (juegoTerminado) return;
+        juegoTerminado = true;
+
+        // El nivel se completa SOLO cuando el video llega al final
         if (SCR_GestionNiveles.Instancia != null)
-            SCR_GestionNiveles.Instancia.GuardarProgreso(idNivel);
-
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        {
+            SCR_GestionNiveles.Instancia.CompletarNivelYContinuar(idNivel);
+        }
     }
 }
