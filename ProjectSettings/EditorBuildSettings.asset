@@ -20,6 +20,54 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minijuegos/SCN_Minijuego1.3.unity
     guid: 99efe6ab1cca15b46a83a61bd8f61e32
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo1.unity
+    guid: 385de4f82c7cba04f88fd1739f2dcc00
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo2.unity
+    guid: da59c86f3d2b9aa4fa9231b5217d9c7f
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo3.unity
+    guid: 98823a241aa69804cadf80fb8e78aa85
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo4.unity
+    guid: 1da10ef814386e744a5119cbeb306098
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo5.unity
+    guid: ffc7a706908adf946930f90551954b6b
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo6.unity
+    guid: 8e8cd95741a49634ab6949a419e6f03e
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo7.unity
+    guid: 52042ea51361c6d4091ed8a82dd04196
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo8.unity
+    guid: cbc90fd22d848af4a87eab6290e810e9
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo9.unity
+    guid: e557de897bb59ba45a3bb9c19cbffd53
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo10.unity
+    guid: 8a5b5587deacf1548905c89488be9723
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo11.unity
+    guid: 2561eada22021ec41bf2de204c7be1fa
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo12.unity
+    guid: 5969d2162f4b4f64bb6a1a92a559019f
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo13.unity
+    guid: e3c15fb58183ea34e826f46635893867
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo14.unity
+    guid: 592335a0fb89e514db5f1c6482eb3746
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo15.unity
+    guid: f3d27e429b2148d458de579d26f5286f
+  - enabled: 1
+    path: Assets/Scenes/Dialogos/SCN_Dialogo16.unity
+    guid: b1ccdb84faff03f4ea211c68788ba4e9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
