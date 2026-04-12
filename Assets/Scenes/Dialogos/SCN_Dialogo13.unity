@@ -397,7 +397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 244, y: -210}
+  m_AnchoredPosition: {x: 244, y: -10}
   m_SizeDelta: {x: 1115.3, y: 1065.4114}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &668789197
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668789195}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 8250f572dd016a546bced98c636d2d56, type: 3}
+  m_Texture: {fileID: 2800000, guid: 9c8ed889b93276a4f953adaca3173a0f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
