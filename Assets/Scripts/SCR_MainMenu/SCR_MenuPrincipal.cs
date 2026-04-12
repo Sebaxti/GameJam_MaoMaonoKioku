@@ -3,91 +3,92 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
-// Estructura para cada "hueco" de la galería en el Inspector
 [System.Serializable]
 public class ElementoGaleria
 {
-    public string idNivel;           // ID  
-    public Image componenteImagen;   // El componente Image del objeto
-    public GameObject objetoBloqueo; // El panel negro o candado que tapa la foto
-    public Sprite fotoColor;         // La imagen de la receta terminada
+    public string idNivel;
+    public Image componenteImagen;
+    public GameObject objetoBloqueo;
+    public Sprite fotoColor;
 }
 
 public class SCR_MenuPrincipal : MonoBehaviour
 {
     [Header("Configuración de Galería")]
-    [Tooltip("Añade aquí los elementos de la galería y asigna sus componentes.")]
     [SerializeField] private List<ElementoGaleria> nivelesGaleria;
 
-    [Header("Paneles de Interfaz")]
-    [SerializeField] private GameObject panelOpciones;
-
-    [Header("Ajustes Visuales")]
-    [SerializeField] private Color colorBloqueado = Color.black;
-    [SerializeField] private Color colorDesbloqueado = Color.white;
+    [Header("Configuración de Volumen")]
+    [SerializeField] private Image iconoBotonVolumen; // La imagen del botón que vas a pulsar
+    [SerializeField] private Sprite spriteVolumenNormal; // Icono de altavoz con sonido
+    [SerializeField] private Sprite spriteVolumenMute;   // Icono de altavoz tachado/silenciado
 
     void Start()
     {
-        // 1. Asegurarse de que el panel de opciones esté cerrado al inicio
-        if (panelOpciones != null) panelOpciones.SetActive(false);
+        // Nos aseguramos de que el tiempo corra normal (por si venimos de un menú de pausa)
+        Time.timeScale = 1f;
 
-        // 2. Pintar la galería según el progreso guardado
         RefrescarGaleria();
+        ActualizarIconoVolumen();
     }
-
-    // --- LÓGICA DE LA GALERÍA ---
 
     public void RefrescarGaleria()
     {
-        // Recorremos la lista que configuraste en el Inspector
         foreach (var nivel in nivelesGaleria)
         {
-            // Consultamos al Gestor de Niveles (el Singleton) si este ID está superado
             bool completado = SCR_GestionNiveles.Instancia.ComprobarDesbloqueo(nivel.idNivel);
 
             if (completado)
             {
-                // Si está ganado: mostramos foto a color y quitamos el bloqueo negro
                 nivel.componenteImagen.sprite = nivel.fotoColor;
-                nivel.componenteImagen.color = colorDesbloqueado;
+                nivel.componenteImagen.color = Color.white;
                 nivel.objetoBloqueo.SetActive(false);
 
-                // Opcional: Si la imagen tiene un componente Button, lo activamos
                 Button btn = nivel.componenteImagen.GetComponent<Button>();
                 if (btn != null) btn.interactable = true;
             }
             else
             {
-                // Si no: foto oscurecida y panel de bloqueo activo
-                nivel.componenteImagen.color = colorBloqueado;
+                nivel.componenteImagen.color = Color.black;
                 nivel.objetoBloqueo.SetActive(true);
 
-                // Opcional: Desactivamos el botón para que no puedan entrar al nivel
                 Button btn = nivel.componenteImagen.GetComponent<Button>();
                 if (btn != null) btn.interactable = false;
             }
         }
     }
 
-    // --- FUNCIONES PARA LOS BOTONES ---
-
-    // Carga cualquier escena pasando su nombre exacto como texto
-    public void CargarEscena(string nombreEscena)
+    // --- LÓGICA DE VOLUMEN (25% en 25%) ---
+    public void PulsarBotonVolumen()
     {
-        Debug.Log("Cargando escena: " + nombreEscena);
-        SceneManager.LoadScene(nombreEscena);
+        float volumenActual = AudioListener.volume;
+
+        // Subimos de 25 en 25 (0 -> 0.25 -> 0.5 -> 0.75 -> 1 -> 0)
+        if (volumenActual < 0.1f) AudioListener.volume = 0.25f;
+        else if (volumenActual < 0.3f) AudioListener.volume = 0.5f;
+        else if (volumenActual < 0.6f) AudioListener.volume = 0.75f;
+        else if (volumenActual < 0.8f) AudioListener.volume = 1f;
+        else AudioListener.volume = 0f; // Si es 100%, vuelve a 0
+
+        ActualizarIconoVolumen();
     }
 
-    // Abre o cierra el panel de opciones según el "check" del Inspector
-    public void AlternarOpciones(bool estado)
+    private void ActualizarIconoVolumen()
     {
-        if (panelOpciones != null)
+        if (iconoBotonVolumen != null)
         {
-            panelOpciones.SetActive(estado);
+            if (AudioListener.volume == 0f)
+                iconoBotonVolumen.sprite = spriteVolumenMute;
+            else
+                iconoBotonVolumen.sprite = spriteVolumenNormal;
         }
     }
 
-    // Cierra el juego (solo funciona en el .exe o .apk final)
+    // --- FUNCIONES BÁSICAS ---
+    public void CargarEscena(string nombreEscena)
+    {
+        SceneManager.LoadScene(nombreEscena);
+    }
+
     public void SalirDelJuego()
     {
         Debug.Log("Saliendo del juego...");

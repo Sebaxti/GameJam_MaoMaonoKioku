@@ -1,18 +1,14 @@
 using UnityEngine;
 using UnityEngine.Video;
-using UnityEngine.SceneManagement; // Necesario para cargar escenas
 
 public class SCR_ControlVideoMinijuego : MonoBehaviour
 {
     [Header("Configuración del Video")]
     [SerializeField] private VideoPlayer reproductorDeVideo;
 
-    [Header("Flujo de Escenas (Configurable)")]
-    [Tooltip("ID para guardar el progreso (ej: Nivel1)")]
+    [Header("Identificación (Sistema Central)")]
+    [Tooltip("El ID debe coincidir exactamente con el que pusiste en el GestorNiveles del MainMenu")]
     [SerializeField] private string idDeEsteNivel = "Nivel1";
-
-    [Tooltip("Escribe el nombre de la escena a la que quieres ir al ganar")]
-    [SerializeField] private string escenaSiguiente = "MainMenu";
 
     void Start()
     {
@@ -23,7 +19,6 @@ public class SCR_ControlVideoMinijuego : MonoBehaviour
         }
     }
 
-    // Esta función se llamará cuando el jugador haga las cosas bien
     public void RegistrarAcierto()
     {
         if (reproductorDeVideo != null && !reproductorDeVideo.isPlaying)
@@ -32,7 +27,6 @@ public class SCR_ControlVideoMinijuego : MonoBehaviour
         }
     }
 
-    // Esta función se llamará cuando el jugador se equivoque
     public void RegistrarFallo()
     {
         if (reproductorDeVideo != null && reproductorDeVideo.isPlaying)
@@ -41,18 +35,18 @@ public class SCR_ControlVideoMinijuego : MonoBehaviour
         }
     }
 
-    // Esta función se ejecuta automáticamente cuando el video llega a su fin
+
     private void AlTerminarVideo(VideoPlayer vp)
     {
-        Debug.Log("Video finalizado. Guardando progreso y cambiando de escena...");
+        Debug.Log($"Nivel {idDeEsteNivel} terminado. Avisando al Gestor Central...");
 
-        // 1. Guardamos el progreso en el Gestor de Niveles
         if (SCR_GestionNiveles.Instancia != null)
         {
-            SCR_GestionNiveles.Instancia.GuardarProgreso(idDeEsteNivel);
+            SCR_GestionNiveles.Instancia.CompletarNivelYContinuar(idDeEsteNivel);
         }
-
-        // 2. Cargamos la escena que tú elijas en el Inspector
-        SceneManager.LoadScene(escenaSiguiente);
+        else
+        {
+            Debug.LogError("¡No se encuentra el SCR_GestionNiveles! ¿Has iniciado el juego desde el Main Menu?");
+        }
     }
 }
