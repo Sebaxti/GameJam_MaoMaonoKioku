@@ -51,7 +51,6 @@ public class SCR_ContadorGlobal : MonoBehaviour
         if (configActual != null)
         {
             estaActivo = configActual.escenasActivas.Contains(escena.name);
-            // ESTO APARECERÁ EN TU CONSOLA:
             Debug.Log("Escena actual: " + escena.name + " | ¿Reloj activo aquí?: " + estaActivo);
         }
     }

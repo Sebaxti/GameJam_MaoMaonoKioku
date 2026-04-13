@@ -18,13 +18,12 @@ public class SCR_MenuPrincipal : MonoBehaviour
     [SerializeField] private List<ElementoGaleria> nivelesGaleria;
 
     [Header("Configuración de Volumen")]
-    [SerializeField] private Image iconoBotonVolumen; // La imagen del botón que vas a pulsar
-    [SerializeField] private Sprite spriteVolumenNormal; // Icono de altavoz con sonido
-    [SerializeField] private Sprite spriteVolumenMute;   // Icono de altavoz tachado/silenciado
+    [SerializeField] private Image iconoBotonVolumen;
+    [SerializeField] private Sprite spriteVolumenNormal;
+    [SerializeField] private Sprite spriteVolumenMute; 
 
     void Start()
     {
-        // Nos aseguramos de que el tiempo corra normal (por si venimos de un menú de pausa)
         Time.timeScale = 1f;
 
         RefrescarGaleria();

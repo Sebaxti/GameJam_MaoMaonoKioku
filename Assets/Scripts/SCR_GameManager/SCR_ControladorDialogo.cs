@@ -124,10 +124,8 @@ public class SCR_ControladorDialogo : MonoBehaviour
 
         Debug.Log("Fin del diálogo. Avisando al Gestor de Niveles...");
 
-        // Llamamos al cerebro (Gestor de Niveles) para que guarde progreso y cargue la siguiente escena
         if (SCR_GestionNiveles.Instancia != null)
         {
-            // Usamos la función centralizada que ya tienes creada
             SCR_GestionNiveles.Instancia.CompletarNivelYContinuar(idDeEsteNivel);
         }
         else

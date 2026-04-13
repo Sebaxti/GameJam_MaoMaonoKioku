@@ -39,7 +39,6 @@ public class SCR_MenuPausa : MonoBehaviour
         }
     }
 
-    // Convertimos los Assets de escena a Strings una sola vez para evitar "hardcoding"
     void PrepararListaEscenas()
     {
         foreach (Object objeto in escenasProhibidasAssets)
@@ -54,7 +53,6 @@ public class SCR_MenuPausa : MonoBehaviour
         {
             string escenaActual = SceneManager.GetActiveScene().name;
 
-            // Verificamos si la escena actual está en la lista de prohibidas
             if (!nombresEscenasProhibidas.Contains(escenaActual))
             {
                 if (juegoPausado) ReanudarJuego();
@@ -69,7 +67,6 @@ public class SCR_MenuPausa : MonoBehaviour
         panelPausa.SetActive(true);
         Time.timeScale = 0f;
 
-        // CORRECCIÓN MÉTODO OBSOLETO: Usamos FindObjectsByType
         videosEnEscena = Object.FindObjectsByType<VideoPlayer>(FindObjectsSortMode.None);
         estadoVideos = new bool[videosEnEscena.Length];
 
@@ -122,8 +119,6 @@ public class SCR_MenuPausa : MonoBehaviour
         juegoPausado = false;
         panelPausa.SetActive(false);
 
-        // Usamos la primera escena de la lista de prohibidas (que debería ser el MainMenu)
-        // para evitar escribir el nombre a mano aquí también.
         if (nombresEscenasProhibidas.Count > 0)
             SceneManager.LoadScene(nombresEscenasProhibidas[0]);
         else

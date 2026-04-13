@@ -2925,10 +2925,10 @@ MonoBehaviour:
     segundosPara3Estrellas: 0
     segundosPara2Estrellas: 0
   - idNivel: SCN_Minijuego1.3
-    escenaSiguiente: SCN_Minijuego1.4
-    segundosPara3Estrellas: 0
-    segundosPara2Estrellas: 0
-  escenaResultados: SCN_Resultados
+    escenaSiguiente: 
+    segundosPara3Estrellas: 50
+    segundosPara2Estrellas: 30
+  escenaResultados: SCN_MenuResultados
   idNivelRecienTerminado: 
 --- !u!114 &1270413990
 MonoBehaviour:

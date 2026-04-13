@@ -35,7 +35,6 @@ public class SCR_MinijuegoMachacar : MonoBehaviour
     {
         panelContenedor.SetActive(false);
 
-        // Configuramos la transparencia del 50% para la tecla de "predicción"
         if (textoSiguiente != null)
         {
             Color c = textoSiguiente.color;
@@ -64,7 +63,7 @@ public class SCR_MinijuegoMachacar : MonoBehaviour
 
         if (reproductor == null || !reproductor.isPlaying && !esperandoInput) return;
 
-        // --- LÓGICA DE AVISO (1 segundo antes de la parada) ---
+
         if (!esperandoInput && !avisoMostrado)
         {
             if (reproductor.time >= (tiempoProximaParada - 1.0f))
@@ -72,17 +71,15 @@ public class SCR_MinijuegoMachacar : MonoBehaviour
                 avisoMostrado = true;
                 panelContenedor.SetActive(true);
                 textoSiguiente.gameObject.SetActive(true);
-                textoActual.gameObject.SetActive(false); // Aún no toca pulsar
+                textoActual.gameObject.SetActive(false); 
             }
         }
 
-        // --- LÓGICA DE PARADA ---
         if (!esperandoInput && reproductor.time >= tiempoProximaParada)
         {
             PausarYPedirMachacar();
         }
 
-        // --- LÓGICA DE MACHACAR ---
         if (esperandoInput)
         {
             if (Input.GetKeyDown(teclaActual))
@@ -102,7 +99,6 @@ public class SCR_MinijuegoMachacar : MonoBehaviour
         reproductor.time = tiempoProximaParada;
         esperandoInput = true;
 
-        // Mostramos la tecla actual para machacar
         textoActual.gameObject.SetActive(true);
         ActualizarTextoContador();
     }
@@ -125,7 +121,6 @@ public class SCR_MinijuegoMachacar : MonoBehaviour
         contadorPulsaciones = 0;
         tiempoProximaParada += intervaloSegundos;
 
-        // La que era "Siguiente" pasa a ser la "Actual"
         teclaActual = teclaSiguiente;
         teclaSiguiente = teclasPosibles[Random.Range(0, teclasPosibles.Count)];
 
@@ -145,7 +140,6 @@ public class SCR_MinijuegoMachacar : MonoBehaviour
     {
         enCastigo = false;
         panelContenedor.SetActive(true);
-        // Al volver del castigo, el jugador sigue teniendo que machacar la misma tecla
     }
 
     void GenerarTeclasIniciales()
@@ -163,7 +157,6 @@ public class SCR_MinijuegoMachacar : MonoBehaviour
 
     void ActualizarTextoContador()
     {
-        // Opcional: Puedes hacer que el texto diga "TECLA (10/10)"
         textoActual.text = teclaActual.ToString().Replace("Arrow", "");
     }
 

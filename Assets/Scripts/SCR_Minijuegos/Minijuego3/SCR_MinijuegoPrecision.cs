@@ -12,7 +12,6 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
     [SerializeField] private RectTransform zonaObjetivo;
 
     [Header("Configuración de Checkpoints (Segundos)")]
-    [Tooltip("El video volverá a estos segundos exactos si fallas después de haberlos superado.")]
     [SerializeField] private List<float> paradasVideo;
 
     [Header("Ajustes")]
@@ -25,7 +24,6 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
 
     void Start()
     {
-        // 1. Reset absoluto de la interfaz al arrancar
         if (barraPrincipal != null)
         {
             barraPrincipal.minValue = 0f;
@@ -48,21 +46,17 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
     {
         if (juegoTerminado || enEsperaDeSeguridad) return;
 
-        // MIENTRAS MANTIENES PULSADO: El video avanza y la barra se llena
         if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
         {
             ActualizarProgreso();
         }
         else
         {
-            // Si dejas de pulsar, el video se pausa inmediatamente
             if (video.isPlaying) video.Pause();
         }
 
-        // AL SOLTAR: Evaluamos si la barra estaba en la zona verde
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
-            // Solo validamos si la barra se ha movido un poco (evita fallos por clics accidentales)
             if (barraPrincipal.value > 0.05f)
             {
                 ValidarIntento();
@@ -76,7 +70,6 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
 
         barraPrincipal.value += velocidadBarra * Time.deltaTime;
 
-        // Si la barra llega al 100% y no has soltado, fallas por tardanza
         if (barraPrincipal.value >= 1f)
         {
             StartCoroutine(ProcesoFallo());
@@ -85,7 +78,6 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
 
     void ValidarIntento()
     {
-        // Calculamos los bordes visuales de la zona verde
         float inicioVerde = zonaObjetivo.anchorMin.x;
         float finVerde = zonaObjetivo.anchorMax.x;
 
@@ -101,10 +93,8 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
 
     void Aceptar()
     {
-        // Guardamos el progreso: buscamos en la lista qué parada hemos superado ya
         ActualizarCheckpointDeSeguridad();
 
-        // Limpiamos la barra y ponemos un nuevo reto para seguir avanzando el video
         barraPrincipal.value = 0f;
         GenerarNuevaZonaVerde();
 
@@ -116,7 +106,6 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
         float tiempoActual = (float)video.time;
         float mejorPunto = 0f;
 
-        // Buscamos el tiempo más alto en la lista que sea menor al tiempo actual del video
         foreach (float p in paradasVideo)
         {
             if (p <= tiempoActual) mejorPunto = p;
@@ -130,13 +119,10 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
         enEsperaDeSeguridad = true;
         video.Pause();
 
-        // PENALIZACIÓN: El video vuelve al último checkpoint que lograste pasar
         video.time = checkpointActual;
 
-        // RESET DE BARRA: Forzamos que vuelva a 0
         barraPrincipal.value = 0f;
 
-        // Pequeña espera para que el jugador suelte el dedo y se prepare
         yield return new WaitForSeconds(0.3f);
 
         enEsperaDeSeguridad = false;
@@ -156,7 +142,6 @@ public class SCR_MinijuegoPrecision : MonoBehaviour
         if (juegoTerminado) return;
         juegoTerminado = true;
 
-        // El nivel se completa SOLO cuando el video llega al final
         if (SCR_GestionNiveles.Instancia != null)
         {
             SCR_GestionNiveles.Instancia.CompletarNivelYContinuar(idNivel);

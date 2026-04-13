@@ -8,7 +8,6 @@ public class SCR_ZonaDeJuego : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [SerializeField] private VideoPlayer videoPlayer;
 
     [Header("Configuración de Segmentos")]
-    [Tooltip("El video se detendrá en múltiplos de este número (ej: 2 para segundos pares)")]
     [SerializeField] private float intervaloSegundos = 2f;
 
     [Header("Configuración del Cursor")]
@@ -28,16 +27,14 @@ public class SCR_ZonaDeJuego : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
     }
 
-    // --- LÓGICA DE SEGUIMIENTO EN TIEMPO REAL ---
     void Update()
     {
-        // Si el jugador soltó el clic y estamos esperando llegar al segundo par...
         if (estaEsperandoCorte && videoPlayer.isPlaying)
         {
             if (videoPlayer.time >= tiempoObjetivo)
             {
                 videoPlayer.Pause();
-                videoPlayer.time = tiempoObjetivo; // Ajuste exacto para evitar desfases
+                videoPlayer.time = tiempoObjetivo;
                 estaEsperandoCorte = false;
                 Debug.Log("Video detenido en punto de control: " + tiempoObjetivo);
             }
@@ -48,7 +45,7 @@ public class SCR_ZonaDeJuego : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         if (videoPlayer != null)
         {
-            estaEsperandoCorte = false; // Cancelamos la detención si vuelve a pulsar
+            estaEsperandoCorte = false;
             videoPlayer.Play();
         }
     }
@@ -63,7 +60,6 @@ public class SCR_ZonaDeJuego : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             float tiempoActual = (float)videoPlayer.time;
             tiempoObjetivo = Mathf.Ceil(tiempoActual / intervaloSegundos) * intervaloSegundos;
 
-            // Si por alguna razón el cálculo da el mismo segundo actual (muy raro), sumamos un intervalo
             if (tiempoObjetivo <= videoPlayer.time)
             {
                 tiempoObjetivo += intervaloSegundos;
@@ -74,7 +70,6 @@ public class SCR_ZonaDeJuego : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
     }
 
-    // --- CURSOR ---
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (cursorPersonalizado != null) Cursor.SetCursor(cursorPersonalizado, hotspot, CursorMode.Auto);
