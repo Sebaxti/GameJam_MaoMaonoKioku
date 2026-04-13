@@ -641,7 +641,7 @@ MonoBehaviour:
   - 6
   - 8
   - 10
-  idNivel: SCN_Sake8
+  idNivel: SCN_Sake7
   velocidadBarra: 0.7
 --- !u!4 &1035175219
 Transform:

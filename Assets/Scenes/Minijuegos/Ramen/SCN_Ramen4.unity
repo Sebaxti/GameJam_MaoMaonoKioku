@@ -619,7 +619,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743728219}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 8088c4905889a0f4283900af55c9c1cd, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: ff2e5ee6dca3e474eb2610e552ea0af2, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -756,7 +756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 551, y: 287}
+  m_AnchoredPosition: {x: 650, y: 242}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1194953653
@@ -1119,11 +1119,11 @@ MonoBehaviour:
   textoSiguiente: {fileID: 639106125}
   panelContenedor: {fileID: 1194953651}
   reproductor: {fileID: 743728221}
-  intervaloSegundos: 1
+  intervaloSegundos: 1.3
   pulsacionesNecesarias: 10
   teclasPosibles: 2000000071000000650000007200000077000000
   tiempoCastigo: 2
-  idNivel: SCN_Somen4
+  idNivel: SCN_Ramen4
 --- !u!1 &2105220401
 GameObject:
   m_ObjectHideFlags: 0

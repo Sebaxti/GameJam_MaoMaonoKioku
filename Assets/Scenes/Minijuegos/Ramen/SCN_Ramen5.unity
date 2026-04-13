@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SCR_ControlVideoMinijuego
   reproductorDeVideo: {fileID: 157850923}
-  idDeEsteNivel: SCN_Somen1
+  idDeEsteNivel: SCN_Ramen5
 --- !u!4 &126450642
 Transform:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157850921}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 016e4267b7e2e484c865eb05108e62bc, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 1e2b80e7a83d79d43ac041a1c0eba477, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 330585545}
