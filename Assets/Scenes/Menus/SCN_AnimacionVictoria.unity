@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 96580083}
   - component: {fileID: 96580082}
   - component: {fileID: 96580081}
+  - component: {fileID: 96580084}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -211,6 +212,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &96580084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96580080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &818839836
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,11 +511,11 @@ MonoBehaviour:
   escenaResultados: SCN_MenuResultados
   reproductorVideo: {fileID: 824760438}
   configuracionVideos:
-  - idUltimoNivel: SCN_Somen5
+  - idUltimoNivel: SCN_Somen6
     videoCelebracion: {fileID: 32900000, guid: 968cccb46e2a78341a81f74cbf92e960, type: 3}
   - idUltimoNivel: SCN_Sake8
     videoCelebracion: {fileID: 32900000, guid: a47370eaaaadb064ab648a74245aa49f, type: 3}
-  - idUltimoNivel: SCN_Dango7
+  - idUltimoNivel: SCN_Dango9
     videoCelebracion: {fileID: 32900000, guid: 9515aae55f9d56043b829797bf3944e7, type: 3}
   - idUltimoNivel: SCN_Ramen8
     videoCelebracion: {fileID: 32900000, guid: 96e45781ebbaab24d810a272d6662ff0, type: 3}

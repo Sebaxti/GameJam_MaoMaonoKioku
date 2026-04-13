@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SCR_ZonasInteractivaVideo
   reproductorVideo: {fileID: 1270664389}
-  cursorInteractivo: {fileID: 10900, guid: 0000000000000000f000000000000000, type: 0}
+  cursorInteractivo: {fileID: 2800000, guid: 1697c0a9402bb8045b398985f85440cd, type: 3}
   cursorNormal: {fileID: 0}
   listaDeZonas:
   - objetoZona: {fileID: 1483954440}

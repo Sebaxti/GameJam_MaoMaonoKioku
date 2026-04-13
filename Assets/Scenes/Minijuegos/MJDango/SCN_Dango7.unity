@@ -441,8 +441,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SCR_ZonasInteractivaVideo
   reproductorVideo: {fileID: 1270664389}
-  cursorInteractivo: {fileID: 10900, guid: 0000000000000000f000000000000000, type: 0}
-  cursorNormal: {fileID: 0}
+  cursorInteractivo: {fileID: 2800000, guid: 1697c0a9402bb8045b398985f85440cd, type: 3}
+  cursorNormal: {fileID: 2800000, guid: 4b38c7f4b8acd1346a6aead6c615b3e3, type: 3}
   listaDeZonas:
   - objetoZona: {fileID: 1483954440}
     segundoDestino: 0.5
@@ -451,11 +451,9 @@ MonoBehaviour:
   - objetoZona: {fileID: 1634697826}
     segundoDestino: 2
   - objetoZona: {fileID: 1487252654}
-    segundoDestino: 2.29
+    segundoDestino: 3.6
   - objetoZona: {fileID: 703410744}
-    segundoDestino: 2.5
-  - objetoZona: {fileID: 703410744}
-    segundoDestino: 2.5
+    segundoDestino: 5
   idNivel: SCN_Dango7
 --- !u!4 &452503786
 Transform:
@@ -506,7 +504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 620, y: -100}
+  m_AnchoredPosition: {x: -879, y: 68}
   m_SizeDelta: {x: 126.9913, y: 264.647}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &703410746

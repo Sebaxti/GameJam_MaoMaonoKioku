@@ -72,6 +72,6 @@ public class SCR_ControladorResultados : MonoBehaviour
     public void Boton_Menu()
     {
 
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("SCN_MainMenu");
     }
 }

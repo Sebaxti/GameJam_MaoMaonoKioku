@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Minijuegos/MJSomen/SCN_Somen5.unity
     guid: 42656f03b7bb8bb4690b09cb043474cd
   - enabled: 1
+    path: Assets/Scenes/Minijuegos/MJSomen/SCN_Somen6.unity
+    guid: 06862433360f26444810b16f6a6dcea0
+  - enabled: 1
     path: Assets/Scenes/Dialogos/SCN_Dialogo3.unity
     guid: 98823a241aa69804cadf80fb8e78aa85
   - enabled: 1
@@ -98,6 +101,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minijuegos/MJDango/SCN_Dango7.unity
     guid: e4d1256a251229242b1830de5d5912ba
+  - enabled: 1
+    path: Assets/Scenes/Minijuegos/MJDango/SCN_Dango8.unity
+    guid: 6dc09c5621091b145bea297ea0cc7ed7
+  - enabled: 1
+    path: Assets/Scenes/Minijuegos/MJDango/SCN_Dango9.unity
+    guid: ad0afe5bb6c0d404e820fe46658c7472
   - enabled: 1
     path: Assets/Scenes/Dialogos/SCN_Dialogo11.unity
     guid: 2561eada22021ec41bf2de204c7be1fa

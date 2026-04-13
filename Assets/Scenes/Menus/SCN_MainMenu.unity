@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -867,19 +867,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SCR_MenuPrincipal
   nivelesGaleria:
-  - idNivel: SCN_Minijuego1.1
+  - idNivel: SCN_Somen6
     componenteImagen: {fileID: 1371645420}
     objetoBloqueo: {fileID: 2135950760}
     fotoColor: {fileID: 21300000, guid: 4e315d092ec94964ea5711d7652892bc, type: 3}
-  - idNivel: SCN_Minijuego1.2
+  - idNivel: SCN_Sake8
     componenteImagen: {fileID: 1145681686}
     objetoBloqueo: {fileID: 587590766}
     fotoColor: {fileID: 21300000, guid: 3f31b640dabd19841bf6e62d42c9d871, type: 3}
-  - idNivel: SCN_Minijuego1.3
+  - idNivel: SCN_Dango9
     componenteImagen: {fileID: 366230924}
     objetoBloqueo: {fileID: 148754573}
     fotoColor: {fileID: 21300000, guid: a371255e67c800846a41fe16be2e5552, type: 3}
-  - idNivel: SCN_TransicionMJ1.1
+  - idNivel: SCN_Ramen8
     componenteImagen: {fileID: 135177293}
     objetoBloqueo: {fileID: 1344602830}
     fotoColor: {fileID: 21300000, guid: 600ddf6c4cabaa64db62fed4f93676cc, type: 3}
@@ -1109,8 +1109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SCR_MenuPausa
   panelPausa: {fileID: 1165634380}
   iconoBotonVolumen: {fileID: 979124757}
-  spriteVolumenNormal: {fileID: 21300000, guid: 9dee8d67f675c4044a69eafb82acab98, type: 3}
-  spriteVolumenMute: {fileID: 21300000, guid: 74dd52be91cbcfb4e899dc96d8e2fd78, type: 3}
+  spriteVolumenNormal: {fileID: 21300000, guid: 03a4e8842b020d1418bf2f4dcc8130fc, type: 3}
+  spriteVolumenMute: {fileID: 21300000, guid: 432be283df3195a4f819fb61fdc95ac5, type: 3}
   escenasProhibidasAssets:
   - {fileID: 102900000, guid: bee1d7b75545e1b459348428878d7ec1, type: 3}
 --- !u!114 &502181158
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2936,6 +2936,10 @@ MonoBehaviour:
     segundosPara3Estrellas: 0
     segundosPara2Estrellas: 0
   - idNivel: SCN_Somen5
+    escenaSiguiente: SCN_Somen6
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Somen6
     escenaSiguiente: 
     segundosPara3Estrellas: 30
     segundosPara2Estrellas: 20
@@ -3028,6 +3032,14 @@ MonoBehaviour:
     segundosPara3Estrellas: 0
     segundosPara2Estrellas: 0
   - idNivel: SCN_Dango7
+    escenaSiguiente: SCN_Dango8
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango8
+    escenaSiguiente: SCN_Dango9
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango9
     escenaSiguiente: 
     segundosPara3Estrellas: 30
     segundosPara2Estrellas: 20
@@ -3114,6 +3126,7 @@ MonoBehaviour:
     - SCN_Somen3
     - SCN_Somen4
     - SCN_Somen5
+    - SCN_Somen6
     escenaReinicioFallo: SCN_Somen1
     escenaInicialDelGrupo: SCN_Somen1
     idSiguienteGrupo: Reloj_Receta2
@@ -3440,7 +3453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4251,14 +4264,14 @@ RectTransform:
   m_GameObject: {fileID: 1884158292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15.766898, y: 15.766898, z: 15.766898}
+  m_LocalScale: {x: 18.526104, y: 15.766898, z: 15.766898}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 229886686}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140, y: -124}
+  m_AnchoredPosition: {x: -84, y: -130}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884158294
@@ -4768,7 +4781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
