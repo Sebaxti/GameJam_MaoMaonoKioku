@@ -434,7 +434,7 @@ RectTransform:
   m_GameObject: {fileID: 101396131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2593, y: 1.2593, z: 1.2593}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 721927908}
@@ -442,7 +442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -770, y: -482}
+  m_AnchoredPosition: {x: -815, y: -465}
   m_SizeDelta: {x: 73.5962, y: 78.0835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &101396133
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.654088, g: 0.654088, b: 0.654088, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 03a4e8842b020d1418bf2f4dcc8130fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -884,8 +884,8 @@ MonoBehaviour:
     objetoBloqueo: {fileID: 1344602830}
     fotoColor: {fileID: 21300000, guid: 600ddf6c4cabaa64db62fed4f93676cc, type: 3}
   iconoBotonVolumen: {fileID: 101396134}
-  spriteVolumenNormal: {fileID: 21300000, guid: 9dee8d67f675c4044a69eafb82acab98, type: 3}
-  spriteVolumenMute: {fileID: 21300000, guid: 74dd52be91cbcfb4e899dc96d8e2fd78, type: 3}
+  spriteVolumenNormal: {fileID: 21300000, guid: 03a4e8842b020d1418bf2f4dcc8130fc, type: 3}
+  spriteVolumenMute: {fileID: 21300000, guid: 432be283df3195a4f819fb61fdc95ac5, type: 3}
 --- !u!1 &309553418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1204,7 @@ RectTransform:
   m_GameObject: {fileID: 573941910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.7168, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2114436170}
@@ -1212,7 +1212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -600, y: -50}
+  m_AnchoredPosition: {x: -557, y: -305}
   m_SizeDelta: {x: 416.4456, y: 78.0835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573941912
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.654088, g: 0.654088, b: 0.654088, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1291,8 +1291,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4144e05fb1f7a4b48a98c0c02f320bfd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Vol
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2602,7 +2602,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jugar
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2746,7 +2746,7 @@ RectTransform:
   m_GameObject: {fileID: 1255366372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.6035776, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1168977888}
@@ -2754,7 +2754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -600, y: 100}
+  m_AnchoredPosition: {x: -551, y: -160}
   m_SizeDelta: {x: 416.4456, y: 78.0835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1255366374
@@ -2779,7 +2779,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2845,8 +2845,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 08120329650eac54fbca60b210530c70, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2937,12 +2937,144 @@ MonoBehaviour:
     escenaSiguiente: SCN_Dialogo4
     segundosPara3Estrellas: 0
     segundosPara2Estrellas: 0
+  - idNivel: SCN_Dialogo4
+    escenaSiguiente: SCN_Dialogo5
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
   - idNivel: SCN_Somen5
+    escenaSiguiente: SCN_Sake1
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Sake1
+    escenaSiguiente: SCN_Sake2
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Sake2
+    escenaSiguiente: SCN_Sake3
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Sake3
+    escenaSiguiente: SCN_Sake4
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Sake4
+    escenaSiguiente: SCN_Sake5
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Sake5
+    escenaSiguiente: SCN_Sake6
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Sake6
+    escenaSiguiente: SCN_Sake7
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Sake7
+    escenaSiguiente: SCN_Sake8
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Sake8
     escenaSiguiente: 
     segundosPara3Estrellas: 30
     segundosPara2Estrellas: 20
-  - idNivel: SCN_Somen5
+  - idNivel: SCN_Dialogo6
+    escenaSiguiente: SCN_Dialogo7
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dialogo7
+    escenaSiguiente: SCN_Dialogo8
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dialogo8
+    escenaSiguiente: SCN_Dialogo9
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dialogo9
+    escenaSiguiente: SCN_Dialogo10
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango1
+    escenaSiguiente: SCN_Dango2
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango2
+    escenaSiguiente: SCN_Dango3
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango3
+    escenaSiguiente: SCN_Dango4
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango4
+    escenaSiguiente: SCN_Dango5
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango5
+    escenaSiguiente: SCN_Dango6
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango6
+    escenaSiguiente: SCN_Dango7
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango7
+    escenaSiguiente: SCN_Dango8
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango8
+    escenaSiguiente: SCN_Dango9
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dango9
     escenaSiguiente: 
+    segundosPara3Estrellas: 30
+    segundosPara2Estrellas: 20
+  - idNivel: SCN_Dialogo11
+    escenaSiguiente: SCN_Dialogo12
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dialogo13
+    escenaSiguiente: SCN_Dialogo14
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Dialogo12
+    escenaSiguiente: SCN_Dialogo13
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Ramen1
+    escenaSiguiente: SCN_Ramen2
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Ramen2
+    escenaSiguiente: SCN_Ramen3
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Ramen3
+    escenaSiguiente: SCN_Ramen4
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Ramen4
+    escenaSiguiente: SCN_Ramen5
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Ramen5
+    escenaSiguiente: SCN_Ramen6
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Ramen6
+    escenaSiguiente: SCN_Ramen7
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Ramen7
+    escenaSiguiente: SCN_Ramen8
+    segundosPara3Estrellas: 0
+    segundosPara2Estrellas: 0
+  - idNivel: SCN_Ramen8
+    escenaSiguiente: 
+    segundosPara3Estrellas: 30
+    segundosPara2Estrellas: 20
+  - idNivel: SCN_Dialogo15
+    escenaSiguiente: SCN_Dialogo16
     segundosPara3Estrellas: 30
     segundosPara2Estrellas: 20
   escenaResultados: SCN_MenuResultados
@@ -2972,6 +3104,52 @@ MonoBehaviour:
     escenaInicialDelGrupo: SCN_Somen1
     idSiguienteGrupo: Reloj_Receta2
     escenaSiguienteJuego: SCN_Dialogo3
+  - idGrupoCronometro: Reloj_Receta2
+    tiempoTotal: 100
+    escenasActivas:
+    - SCN_Sake1
+    - SCN_Sake2
+    - SCN_Sake3
+    - SCN_Sake4
+    - SCN_Sake5
+    - SCN_Sake6
+    - SCN_Sake7
+    - SCN_Sake8
+    escenaReinicioFallo: SCN_Sake1
+    escenaInicialDelGrupo: SCN_Sake1
+    idSiguienteGrupo: Reloj_Receta3
+    escenaSiguienteJuego: SCN_Dialogo6
+  - idGrupoCronometro: Reloj_Receta3
+    tiempoTotal: 100
+    escenasActivas:
+    - SCN_Dango1
+    - SCN_Dango2
+    - SCN_Dango3
+    - SCN_Dango4
+    - SCN_Dango5
+    - SCN_Dango6
+    - SCN_Dango7
+    - SCN_Dango8
+    - SCN_Dango9
+    escenaReinicioFallo: SCN_Dango1
+    escenaInicialDelGrupo: SCN_Dango1
+    idSiguienteGrupo: Reloj_Receta4
+    escenaSiguienteJuego: SCN_Dialogo11
+  - idGrupoCronometro: Reloj_Receta4
+    tiempoTotal: 100
+    escenasActivas:
+    - SCN_Ramen1
+    - SCN_Ramen2
+    - SCN_Ramen3
+    - SCN_Ramen4
+    - SCN_Ramen5
+    - SCN_Ramen6
+    - SCN_Ramen7
+    - SCN_Ramen8
+    escenaReinicioFallo: SCN_Ramen1
+    escenaInicialDelGrupo: SCN_Ramen1
+    idSiguienteGrupo: Reloj_Receta5
+    escenaSiguienteJuego: SCN_Dialogo15
 --- !u!1 &1315519592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3906,14 +4084,14 @@ RectTransform:
   m_GameObject: {fileID: 1884158292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15.766898, y: 15.766898, z: 15.766898}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 229886686}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -604, y: 307}
+  m_AnchoredPosition: {x: -140, y: -124}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884158294
@@ -3930,13 +4108,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 08d8844c42446f3468353b5eafab0652, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4294,7 +4472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Salir del juego
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
