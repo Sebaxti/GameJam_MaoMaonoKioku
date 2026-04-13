@@ -56,29 +56,20 @@ public class SCR_MenuPrincipal : MonoBehaviour
         }
     }
 
-    // --- LÓGICA DE VOLUMEN (25% en 25%) ---
     public void PulsarBotonVolumen()
     {
-        float volumenActual = AudioListener.volume;
-
-        // Subimos de 25 en 25 (0 -> 0.25 -> 0.5 -> 0.75 -> 1 -> 0)
-        if (volumenActual < 0.1f) AudioListener.volume = 0.25f;
-        else if (volumenActual < 0.3f) AudioListener.volume = 0.5f;
-        else if (volumenActual < 0.6f) AudioListener.volume = 0.75f;
-        else if (volumenActual < 0.8f) AudioListener.volume = 1f;
-        else AudioListener.volume = 0f; // Si es 100%, vuelve a 0
-
-        ActualizarIconoVolumen();
+        if (SCR_GestorAudioGlobal.Instancia != null)
+        {
+            SCR_GestorAudioGlobal.Instancia.CiclarVolumenGlobal();
+            ActualizarIconoVolumen();
+        }
     }
 
     private void ActualizarIconoVolumen()
     {
         if (iconoBotonVolumen != null)
         {
-            if (AudioListener.volume == 0f)
-                iconoBotonVolumen.sprite = spriteVolumenMute;
-            else
-                iconoBotonVolumen.sprite = spriteVolumenNormal;
+            iconoBotonVolumen.sprite = (AudioListener.volume <= 0.01f) ? spriteVolumenMute : spriteVolumenNormal;
         }
     }
 

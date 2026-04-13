@@ -97,12 +97,11 @@ public class SCR_MenuPausa : MonoBehaviour
 
     public void PulsarBotonVolumen()
     {
-        float vol = AudioListener.volume;
-        // Ciclo de volumen: 0 -> 0.25 -> 0.50 -> 0.75 -> 1.0 -> 0
-        float nuevoVol = (vol >= 1f) ? 0f : vol + 0.25f;
-        AudioListener.volume = nuevoVol;
-
-        ActualizarIconoVolumen();
+        if (SCR_GestorAudioGlobal.Instancia != null)
+        {
+            SCR_GestorAudioGlobal.Instancia.CiclarVolumenGlobal();
+            ActualizarIconoVolumen();
+        }
     }
 
     private void ActualizarIconoVolumen()
