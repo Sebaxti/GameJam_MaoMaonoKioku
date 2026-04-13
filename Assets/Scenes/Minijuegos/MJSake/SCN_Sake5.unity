@@ -619,7 +619,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743728219}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 557af5931bf566c4c83c700d8ff649ec, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: a45a92f7c51a62c428cbb1110cf66324, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1120,10 +1120,10 @@ MonoBehaviour:
   panelContenedor: {fileID: 1194953651}
   reproductor: {fileID: 743728221}
   intervaloSegundos: 1
-  pulsacionesNecesarias: 10
+  pulsacionesNecesarias: 15
   teclasPosibles: 2000000071000000650000007200000077000000
   tiempoCastigo: 2
-  idNivel: SCN_Sake6
+  idNivel: SCN_Sake5
 --- !u!1 &2105220401
 GameObject:
   m_ObjectHideFlags: 0
